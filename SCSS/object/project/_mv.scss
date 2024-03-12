@@ -1,0 +1,61 @@
+@use "../responsive/_responsive.scss" as *;
+@use "../componnet/_text.scss";
+@use "../componnet/_scroll.scss";
+@use "../componnet/_news-slide.scss";
+
+.p-mv{
+    position: relative;
+    height: 100%;
+    &__inner{
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: var(--color-font);
+        transform: translateY(-50%);
+    }
+    &__label{
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: .2em;
+        @include responsive(sm){
+            font-size: 1.375rem;
+        }
+    }
+    &__title{
+      margin: 1.875rem 0 0.625rem;
+      font-size: 8.75rem;
+      font-weight: 600;
+      line-height: .9;
+      letter-spacing: .05em;
+      @include responsive(sm){
+        margin: 1.25rem 0 0.625rem;
+        font-size: 4.75rem;
+    }
+    }
+    &__subtitle{
+     font-size: 2.125rem;
+     font-family: 'Noto Sans Jp', sans-serif;
+     line-height: 1;
+     letter-spacing: 1em;
+     margin-bottom: 3.125rem;
+     @include responsive(sm){
+        font-size: 1.375rem;
+    }
+    }
+    
+}
+.p-mv::after{
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 430px;
+  height: 40px;
+  background-image: url(../assets/img/bg-line-bottom-black.svg);
+  @include responsive(sm){
+    width: 200px;
+    height: 30px;
+  }
+}

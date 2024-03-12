@@ -1,0 +1,7 @@
+@use"../responsive/_responsive.scss" as *;
+.p-sns{
+    &__list{
+        display: flex;
+        gap: 0.625rem;
+    }
+}

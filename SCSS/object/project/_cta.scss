@@ -1,0 +1,64 @@
+@use"../responsive/_responsive.scss" as *;
+@use"../componnet/_text.scss";
+.p-cta{
+    position: relative;
+    &__inner{
+        padding: 6.25rem 0;
+        text-align: center;
+        @include responsive(sm){
+            padding: 4.375rem 0;
+        }
+      }
+    &__title{
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--color-font);
+        letter-spacing: .05em;
+        @include responsive(sm){
+            font-size: 2rem;
+        }
+    }
+    &__btn{
+        margin-top: 1.5625rem;
+    }
+}
+
+.p-cta::before,
+.p-cta::after{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 430px;
+    height: 40px;
+    background-repeat: no-repeat;
+    @include responsive(sm){
+        width: 200px;
+        height: 30px;
+    }
+}
+
+.p-cta::before{
+    top: 0;
+    left: 0;
+    @include responsive(sm){
+        background-position: 100% 0;
+    }
+}
+.p-cta::after{
+    bottom: 0;
+    right: 0;
+}
+
+.cta--01::before{
+ background-image: url(../assets/img/bg-line-top-black.svg);
+}
+.cta--01::after{
+ background-image: url(../assets/img/bg-line-bottom-color.svg);
+}
+
+.cta--02::before{
+ background-image: url(../assets/img/bg-line-top-color.svg);
+}
+.cta--02::after{
+ background-image: url(../assets/img/bg-line-bottom-black.svg);
+}

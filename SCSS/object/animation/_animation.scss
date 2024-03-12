@@ -1,0 +1,54 @@
+@keyframes atom-spinner-animation-1 {
+    100% {
+      transform: rotateZ(120deg) rotateX(66deg) rotateZ(360deg);
+    }
+  }
+  
+  @keyframes atom-spinner-animation-2 {
+    100% {
+      transform: rotateZ(240deg) rotateX(66deg) rotateZ(360deg);
+    }
+  }
+  
+  @keyframes atom-spinner-animation-3 {
+    100% {
+      transform: rotateZ(360deg) rotateX(66deg) rotateZ(360deg);
+    }
+  }
+  // lordinganimation
+
+  @keyframes circlemove {
+    0% {
+      bottom: 45px;
+    }
+    100% {
+      bottom: -5px;
+    }
+  }
+  
+  @keyframes cirlemovehide {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  // scrollanimation
+  @keyframes newsslide-animation {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-270%);
+    }
+  }
+  
+  // newsanimaiton

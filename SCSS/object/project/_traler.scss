@@ -1,0 +1,23 @@
+@use"../responsive/_responsive.scss" as *;
+@use"../componnet/_text.scss";
+.p-traler{
+    background-color: var(--color-main);
+    &__inner{
+     padding: 6.875rem 0;
+     @include responsive(sm){
+        padding: 3.125rem 0;
+     }
+    }
+    &__video{
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    iframe{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+    }
+}

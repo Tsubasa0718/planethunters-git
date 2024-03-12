@@ -1,0 +1,72 @@
+@use"../responsive/_responsive.scss" as *;
+@use"../componnet/_text.scss";
+
+.p-story{
+    background-color: var(--color-story);
+    background-image: url(../assets/img/bg_story.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+  &__inner{
+   padding: 8.75rem 0;
+   @include responsive(sm){
+    padding: 3.125rem 0;
+   }
+  }
+ &__columunwrap{
+    display: grid;
+    row-gap: 5.625rem;
+    @include responsive(sm){
+        row-gap: 3.75rem;
+       }
+ }
+ &__columun{
+  display: flex;
+  align-items: center;
+  column-gap: 5rem;
+  @include responsive(sm){
+    flex-direction: column;
+ }
+ }
+ &__desc{
+   flex: 0 1 50%;
+ }
+ .reserve{
+    flex-direction: row-reverse;
+    @include responsive(sm){
+        flex-direction: column;
+    }
+ }
+ &__title{
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-font);
+  margin-bottom: 1.875rem;
+  @include responsive(sm){
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+}
+ &__text{
+    color: var(--color-font);
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    @include responsive(sm){
+        font-size: 0.9375rem;
+    }
+ }
+ &__image{
+    flex: 1;
+    transform: skew(-5deg, 0deg);
+    box-shadow: 7px 7px var(--color-main);
+    @include responsive(sm){
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 1.875rem;
+    }
+ }
+ &__image:nth-child(2){
+    transform: skew(5deg, 0deg);
+    box-shadow: -7px 7px var(--color-main);
+ }
+}

@@ -1,0 +1,14 @@
+@use"./foundation/_base.scss";
+@use"./foundation/_mixin.scss";
+@use"./foundation/_reset.scss";
+@use"./foundation/_responsive.scss" as *;
+// foundation
+
+@use"./layout/_header.scss";
+@use"./layout/_footer.scss";
+// leyout
+
+@use"./object/componnet/_btn.scss";
+@use"./object/project/_section.scss";
+@use"./object/utility/_state.scss";
+// object

@@ -1,0 +1,41 @@
+@use"../responsive/_responsive.scss" as *;
+@use"../animation/_animation.scss";
+.c-scrolldown{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+ span{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--color-main);
+    writing-mode: vertical-rl;
+   -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+}
+}
+.c-scrolldown:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-main);
+    animation:  circlemove 1.6s ease-in-out infinite,
+    cirlemovehide 1.6s ease-out infinite;
+}
+// cicle
+.c-scrolldown::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 50px;
+    background-color: var(--color-main);
+}
+// bar

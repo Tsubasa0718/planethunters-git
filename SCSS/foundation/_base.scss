@@ -1,0 +1,53 @@
+@charset "utf-8";
+@use"../foundation/_responsive.scss" as *;
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 100%;
+    line-height: 1.5;
+    font-family:"Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+.pc-only{
+    display: block;
+    @include responsive(sm){
+        display: none;
+    }
+}
+// pc class
+.sp-only{
+    display: none;
+    @include responsive(sm){
+        display: block;
+    }
+ }
+// sp class
+ :root{
+  --color-main: #00FFF5;
+  --color-font: #fff;
+  --color-lording: #000;
+  --color-btnfont: #000;
+  --color-story: #000;
+  --color-trailer: #000;
+  --color-footer: #000;
+  --color-audio:  #bfbfbf;
+ }
+// color
+ .l-container{
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 1.875rem;
+   
+ }
+// container

@@ -1,0 +1,30 @@
+.p-bgParallax{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.p-bgParallax::before{
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.5) 50%
+  );
+  background-size: 4px 4px;
+}
+
+.p-bgParallax-video{
+    width: 100%;
+    height: 100vh;
+    vertical-align: bottom;
+    object-fit: cover;
+}

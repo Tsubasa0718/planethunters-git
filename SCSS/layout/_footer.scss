@@ -1,0 +1,25 @@
+@use"../foundation/_responsive.scss" as *;
+.l-footer{
+    padding: 1.5rem 1.875rem;
+    background-color: var(--color-footer);
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include responsive(sm){
+      flex-direction: column;
+    }
+  }
+ &__copy{
+    color: var(--color-font);
+ }
+ &__link{
+  display: block;
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--color-font);
+  a{
+   text-decoration: underline solid 1px var(--color-font);
+  }
+}
+}

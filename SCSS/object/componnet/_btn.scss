@@ -1,0 +1,31 @@
+@use"../responsive/_responsive.scss" as *;
+.c-btn{
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    background-color: var(--color-main);
+    font-size: 0.9375rem;
+    width: 164px;
+    color: var(--color-btnfont);
+    padding: 0.9375rem 0;
+    line-height: 1;
+    transition: box-shadow .3s;
+    @include responsive(sm){
+        display: none;
+    }
+}
+
+.c-btn--lg{
+    @extend .c-btn;
+    width: 230px;
+    font-size: 1.125rem;
+    padding: 1.25rem 0;
+    @include responsive(sm){
+        display: block;
+        width: 170px;
+    }
+}
+
+.c-btn:hover{
+    box-shadow: 0 0 18px 5px rgba(0, 255, 174, 0.6);
+}

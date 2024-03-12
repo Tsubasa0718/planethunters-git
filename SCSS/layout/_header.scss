@@ -1,0 +1,37 @@
+@use"../foundation/_responsive.scss" as *;
+@use"../object/componnet/_text.scss";
+.l-header{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    &__wrapper{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1.5rem 1.875rem;
+     @include responsive(sm){
+        padding: 1.25rem 1.25rem;
+     }
+    }
+    &__logo{
+        @include responsive(sm){
+            width: 120px;
+        }
+    }
+    &__nav{
+        &__list{
+            display: flex;
+            align-items: center;
+            gap: 1.875rem;
+            &__item{
+             color: var(--color-main);
+             font-weight: bold;
+             @include responsive(sm){
+                font-size: 0.8125rem;
+             }
+            }
+        }
+    }
+}
