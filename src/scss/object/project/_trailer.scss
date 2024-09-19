@@ -1,0 +1,18 @@
+@use"../../foundation/_mixin.scss" as *;
+.p-trailer{
+    background-color: var(--color-main);
+    padding: space-to-clamp(50,110,375,1440) 0;
+    &__video{
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%;
+        // アスペクト比の維持
+        iframe{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@use"../../foundation/_mixin.scss" as *;
+
+.c-btn{
+  display: inline-block;
+  text-align: center;
+  font-size: px-to-rem(15px);
+  letter-spacing: .05em;
+  width: 164px;
+  padding:px-to-rem(15px) 0;
+  color: #000;
+  background-color: var(--color-main);
+  &:hover{
+    box-shadow: 0 0 px-to-rem(18px) px-to-rem(5px) rgba(0, 255, 174, 0.6);
+  }
+}
+
+.c-btn--md{
+  @extend .c-btn;
+  width: space-to-clamp(170,230,375,1440);
+  font-size: space-to-clamp(16,18,375,1440);
+  font-weight: bold;
+
+}
+.c-btn--lg{
+  @extend .c-btn--md;
+  width: 100%;
+  font-size: px-to-clamp(16px);
+}

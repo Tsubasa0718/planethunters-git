@@ -1,0 +1,81 @@
+@use"../../foundation/_mixin.scss" as *;
+.p-cta{
+    padding: space-to-clamp(70,100,375,1440) 0;
+  
+ &__title,
+ &__btn{
+    text-align: center;
+ }
+ &__title{
+ font-size: space-to-clamp(32,64,375,1440);
+ font-weight: bold;
+ letter-spacing: .05em;
+ }
+ &__btn{
+    margin-top: space-to-clamp(20,25,375,1440);
+ }
+}
+.cta--01,
+.cta--02{
+ position: relative;
+}
+.cta--01{
+ &:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1%;
+    width: 430px;
+    height: 40px;
+    background-color: #000;
+    clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
+    @include responsive("phone"){
+      width: 200px;
+      height: 30px;
+     }
+ }
+ &:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1%;
+    width: 430px;
+    height: 40px;
+    background-color: var(--color-main);
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
+    @include responsive("phone"){
+      width: 200px;
+      height: 30px;
+     }
+ }
+}
+.cta--02{
+    &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1%;
+        width: 430px;
+        height: 40px;
+        background-color: var(--color-main);
+        clip-path: polygon(0 0, 100% 0, 89% 100%, 0% 100%);
+        @include responsive("phone"){
+         width: 200px;
+         height: 30px;
+        }
+     }
+     &:after{
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: -1%;
+        width: 430px;
+        height: 40px;
+        background-color: #000;
+        clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
+        @include responsive("phone"){
+         width: 200px;
+         height: 30px;
+        }
+     }
+}

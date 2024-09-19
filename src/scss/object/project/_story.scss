@@ -1,0 +1,64 @@
+@use"../../foundation/_mixin.scss" as *;
+
+.p-story{
+  padding: space-to-clamp(50,140,375,1440) 0;
+  background-image: url(/dist/1a8e0dfa55dd4e220c0d.webp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__body{
+    display: grid;
+    row-gap: space-to-clamp(53,83,375,1440);
+  }
+  &__box{
+    display: flex;
+    column-gap: px-to-rem(80px);
+    align-items: center;
+    @include responsive("phone"){
+      flex-direction: column;
+    }
+  }
+  .reserve{
+    flex-direction: row-reverse;
+    @include responsive("phone"){
+      flex-direction: column;
+    }
+  }
+  &__desc{
+    flex: 0 1 50%;
+    @include responsive("phone"){
+     
+    }
+  }
+  &__title{
+   font-size: space-to-clamp(24,32,375,1440);
+   font-weight: bolder;
+   letter-spacing: .05em;
+   line-height: 1.5;
+  }
+  &__text{
+   margin-top: space-to-clamp(20,30,375,1440);
+   font-size: space-to-clamp(15,16,375,1440);
+   line-height: 1.8;
+   letter-spacing: .05em;
+   @include responsive("phone"){
+    width: 100%;
+   }
+  }
+  &__image{
+    flex: 1;
+    transform: skew(-5deg, 0deg);
+    box-shadow: 7px 7px var(--color-main);
+    @include responsive("phone"){
+      padding-top: px-to-rem(30px);
+      width: 85%;
+      margin: 0 auto;
+    }
+
+  }
+  &__image:nth-child(2){
+    transform: skew(5deg, 0deg);
+    box-shadow: -7px 7px var(--color-main);
+  }
+  
+}

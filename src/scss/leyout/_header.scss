@@ -1,0 +1,57 @@
+@use "../foundation/_mixin.scss" as *;
+
+.l-header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: space-to-clamp(110,80,375,1440);
+    padding: 0 space-to-clamp(20,30,375,1440);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo{
+      @include responsive("phone"){
+        width: 120px;
+      }
+    }
+
+   .nav{
+    &__list{
+        display: flex;
+        align-items: center;
+    }
+    &__item{
+        font-weight: bold;
+    }
+    @include responsive("desktop"){
+      font-size: px-to-rem(13px);
+    }
+    &__item:not(:last-of-type){
+        color: var(--color-main);
+    }
+    &__item:not(:first-of-type){
+     margin-left: space-to-clamp(20,30,375,1440);
+    }
+    .audio{
+      position: absolute;
+      right: space-to-clamp(20,30,375,1440);
+      bottom: space-to-clamp(0,-20,375,1440);
+      &__switch{
+        font-size: px-to-rem(13px);
+        line-height: 1;
+        color: #bfbfbf;
+        cursor: pointer;
+        &.on{
+          .audio__switch--text{
+            color: #fff;
+          }
+        }
+      }
+      
+      &__switch--icon{
+        font-size: 18px;
+        vertical-align: text-bottom;
+      }
+    }
+   }
+}

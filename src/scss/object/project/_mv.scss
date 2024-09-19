@@ -1,0 +1,168 @@
+@use"../../foundation/_mixin.scss" as *;
+
+.p-mv{
+    position: relative;
+    height: 100%;
+  &__titleArea{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: #fff;
+    transform: translateY(-50%);
+  }
+  &__label{
+    font-size: space-to-clamp(22,32,375,1445);
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: .2em;
+    margin-bottom: space-to-clamp(20,30,375,1440);
+  }
+  &__title{
+    font-size: space-to-clamp(76,140,375,1445);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: .05em;
+  }
+  &__subtitle{
+    font-size: space-to-clamp(22,34,375,1445);
+    font-weight: 500;
+    letter-spacing: 1em;
+    margin-top: px-to-rem(10px);
+  }
+  &__btn{
+   margin-top: space-to-clamp(30,50,375,1440)
+  }
+  &__newsbox{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: space-to-clamp(20,30,375,1440);
+    bottom:space-to-clamp(30,50,375,1440);
+    overflow: hidden;
+    width: space-to-clamp(200,360,375,1440);
+    border: 1px solid var(--color-main);
+    line-height: 1;
+    padding: 0.5em 0;
+    background-color: #000;
+    p{
+     display: inline-block;
+     font-size: space-to-clamp(13,14,375,1440);
+     line-height: 1;
+     color: #fff;
+     white-space: nowrap;
+     margin: 0;
+     transform: translateX(360px); /* 初期位置を右端の外に設定 */
+     animation: newsBox-animation 7s linear infinite;
+    }
+    p:after{
+      content: "";
+      white-space: nowrap;
+      padding-right: 50px;
+    }
+}
+ &__newsbox--datetime{
+    margin-right: 1em;
+ }
+ &__newsbox--body{
+    color: var(--color-main);
+ }
+  &__scrolldown{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    span{
+       /*描画位置*/
+     position: absolute;
+     bottom: 10px;
+     left: 10px;
+     font-size: 0.7rem;
+     letter-spacing: 0.05em;
+     /*テキストの形状*/
+     color: var(--main-color);
+     writing-mode: vertical-rl;
+     -webkit-writing-mode: vertical-rl;
+    /*縦書き設定*/
+     -ms-writing-mode: tb-rl;
+    }
+    &::before{
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      left: -4px;
+      /*丸の形状*/
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--color-main);
+      /*丸の動き1.6秒かけて透過し、永遠にループ*/
+      animation: circlemove 1.6s ease-in-out infinite,
+      cirlemovehide 1.6s ease-out infinite;
+    }
+    // 丸
+    &::after{
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      /*線の形状*/
+      width: 2px;
+      height: 50px;
+      background: var(--color-main);
+    }
+    // 棒
+  }
+  &::after{
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -1%;
+    width: 430px;
+    height: 40px;
+    background-color: #000;
+    clip-path: polygon(11% 0, 100% 0, 100% 100%, 0% 100%);
+    @include responsive("phone"){
+      width: 200px;
+      height: 30px;
+    }
+    }
+}
+
+// animaiton
+// newsbox
+@keyframes newsBox-animation {
+    from {
+        transform: translateX(360px); /* 初期位置を右端の外に設定 */
+    }
+    to {
+        transform: translateX(-120%); /* 左端の外まで移動 */
+    }
+  }
+// scrolldown
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove {
+  0% {
+    bottom: 45px;
+  }
+  100% {
+    bottom: -5px;
+  }
+}
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
